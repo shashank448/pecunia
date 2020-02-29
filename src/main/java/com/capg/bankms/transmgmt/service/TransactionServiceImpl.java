@@ -24,31 +24,27 @@ public class TransactionServiceImpl implements ITransactionService{
 
 	@Override
 	public boolean updateBalance(Account a) {
-		
+		return dao.updateBalance(account);
 	}
 
 	@Override
 	public int creditUsingSlip(Transaction transaction) {
-		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
 	public int debitUsingSlip(Transaction transaction) {
-		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
 	public int creditUsingCheque(Transaction trnasaction, Cheque cheque) {
-		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 
 	@Override
 	public int debitUsingCheque(Transaction trnasaction, Cheque cheque) {
-		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 	
 	

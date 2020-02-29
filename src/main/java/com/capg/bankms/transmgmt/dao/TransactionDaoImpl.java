@@ -7,7 +7,7 @@ import com.capg.bankms.transmgmt.entities.Slip;
 import com.capg.bankms.transmgmt.entities.Transaction;
 
 public class TransactionDaoImpl implements TransactionDao{
-	private Map<Integer,Transaction> transactionStore=new HashMap<>(); 
+	public static Map<Integer,Transaction> transactionStore=new HashMap<>(); 
 	private static int generatedChequeId;
 	private static int generatedTransactionId;
 	
