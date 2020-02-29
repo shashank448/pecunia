@@ -1,5 +1,19 @@
 package com.capg.bankms.transmgmt.service;
 
-public interface ITransactionService {
+import java.sql.Date;
 
+import com.capg.bankms.transmgmt.dao.Account;
+import com.capg.bankms.transmgmt.entities.Cheque;
+import com.capg.bankms.transmgmt.entities.Slip;
+import com.capg.bankms.transmgmt.entities.Transaction;
+
+public interface ITransactionService {
+	double getBalance(Account a);
+	boolean updateBalance(Account a);
+	int creditUsingSlip(Transaction transaction);
+	int debitUsingSlip(Transaction transaction);
+	int creditUsingCheque(Transaction trnasaction,Cheque cheque);
+	int debitUsingCheque(Transaction trnasaction,Cheque cheque);
+	
+	
 }
