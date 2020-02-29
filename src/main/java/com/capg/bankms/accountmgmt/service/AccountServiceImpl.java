@@ -28,7 +28,9 @@ public class AccountServiceImpl implements IAccountService {
 	
 	@Override
 	public String addAccount(Customer customer,Address address, Account account) {
-		accountDao.
+		customer.setAddress(address);
+		
+		accountDao.addAccount(account)
 	}
 
 	@Override
@@ -45,7 +47,7 @@ public class AccountServiceImpl implements IAccountService {
 
 	@Override
 	public Account findAccountById(String accountId) {
-		accountDao.findAccountById(accountId);
+		return accountDao.findAccountById(accountId);
 	}
 
 	
