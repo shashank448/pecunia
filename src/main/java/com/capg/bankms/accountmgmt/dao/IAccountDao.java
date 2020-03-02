@@ -11,6 +11,6 @@ public interface IAccountDao {
 	String  updateCustomerAddress(Account account,Address address);
 	String  addCustomerDetails(Customer customer,Address address);
 	String  addAccount(Account account);
-	String showAccountDetails(Account account);
+	String  showAccountDetails(Account account);
     Account findAccountById(String accountId);
 }
