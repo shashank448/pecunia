@@ -2,8 +2,9 @@ package com.capg.bankms.transmgmt.dao;
 
 import java.util.*;
 
+import com.capg.bankms.accountmgmt.entities.Account;
 import com.capg.bankms.transmgmt.entities.Cheque;
-import com.capg.bankms.transmgmt.entities.Slip;
+
 import com.capg.bankms.transmgmt.entities.Transaction;
 
 public interface TransactionDao {
