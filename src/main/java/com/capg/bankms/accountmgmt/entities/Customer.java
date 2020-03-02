@@ -1,8 +1,20 @@
 package com.capg.bankms.accountmgmt.entities;
 
+import java.sql.Date;
+
 public class Customer {
 	
 		
+	public Customer() {
+		super();
+		
+	}
+
+
+
+
+
+
 	private String customerId;
 	public static String customerName;
 	public static String customerAddress;
@@ -10,7 +22,7 @@ public class Customer {
 	private String customerPan;
 	public static String customerContact;
 	private String customerGender;
-	private String customerDob;
+	private Date customerDob;
 	private Address address;
 
 
@@ -36,7 +48,7 @@ public class Customer {
 
 
 	public Customer(String customerId,String customerName,String customerAddress,
-	String customerAadhar,String customerPan,String customerContact,String customerGender,String customerDob) {
+	String customerAadhar,String customerPan,String customerContact,String customerGender,Date customerDob) {
 		this.customerId=customerId;
 		this.customerName=customerName;
 		this.customerAadhar=customerAadhar;
@@ -267,7 +279,7 @@ public class Customer {
 
 
 
-	public String getCustomerDob() {
+	public Date getCustomerDob() {
 		return customerDob;
 	}
 
@@ -276,7 +288,7 @@ public class Customer {
 
 
 
-	public void setCustomerDob(String customerDob) {
+	public void setCustomerDob(Date customerDob) {
 		this.customerDob = customerDob;
 	}
 }

@@ -10,7 +10,7 @@ public interface IAccountDao {
 	boolean updateCustomerContact(Account account,Customer customer);
 	String  updateCustomerAddress(Account account,Address address);
 	String  addCustomerDetails(Customer customer,Address address);
-	String  addAccount(Account account);
+	String  addAccount(Account account,Customer customer);
 	String showAccountDetails(Account account);
     Account findAccountById(String accountId);
 }
