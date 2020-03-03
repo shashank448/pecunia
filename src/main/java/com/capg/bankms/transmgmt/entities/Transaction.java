@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Transaction {
 	
 	
-	private String transAccountId;
+	public String transAccountId;
 	private String transId;
 	public String getTransId() {
 		return transId;
@@ -14,7 +14,24 @@ public class Transaction {
 		this.transId = transId;
 	}
 	private String transtype;
-	private double transAmount;
+	public static double transAmount;
+	public Transaction() {
+		super();
+	
+	}
+	public Transaction(String transAccountId, String transId, String transtype, String option, Date transDate,
+			String transFrom, String transTo, double transClosingBalance) {
+		super();
+		this.transAccountId = transAccountId;
+		this.transId = transId;
+		this.transtype = transtype;
+		this.option = option;
+		this.transDate = transDate;
+		this.transFrom = transFrom;
+		this.transTo = transTo;
+		this.transClosingBalance = transClosingBalance;
+	}
+	
 	private String option;
 	private Date transDate;
 	private String transFrom;

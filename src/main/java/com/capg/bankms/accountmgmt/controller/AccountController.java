@@ -13,12 +13,12 @@ public class AccountController {
 	private Customer customer;
 	private Address address;
 	
-	String updateCustomerName(Map<String,Object> map) {
-		
-	}
-	String updateCustomerContact(Map<String,Object> map) {
-		
-	}
+//	String updateCustomerName(Map<String,Object> map) {
+//		
+//	}
+//	String updateCustomerContact(Map<String,Object> map) {
+//		
+//	}
 	
 
 }

@@ -6,7 +6,7 @@ public class Cheque {
 	
 	
 	private String chequeId;
-	private String chequeNum;
+	private int chequeNum;
 	private String chequeAccountNum;
 	private String chequeHolderName;
 	private String chequeBankName;
@@ -14,17 +14,16 @@ public class Cheque {
 	private Date IssueDate;
 	private String chequeStatus;
 	
-	
 	public String getChequeId() {
 		return chequeId;
 	}
 	public void setChequeId(String chequeId) {
 		this.chequeId = chequeId;
 	}
-	public String getChequeNum() {
+	public int getChequeNum() {
 		return chequeNum;
 	}
-	public void setChequeNum(String chequeNum) {
+	public void setChequeNum(int chequeNum) {
 		this.chequeNum = chequeNum;
 	}
 	public String getChequeAccountNum() {

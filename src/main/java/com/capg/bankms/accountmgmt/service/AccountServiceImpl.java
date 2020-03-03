@@ -4,7 +4,7 @@ import com.capg.bankms.accountmgmt.dao.IAccountDao;
 import com.capg.bankms.accountmgmt.entities.Account;
 import com.capg.bankms.accountmgmt.entities.Address;
 import com.capg.bankms.accountmgmt.entities.Customer;
-import com.capgemini.empmgt.dao.IEmployeeDao;
+
 
 public class AccountServiceImpl implements IAccountService {
 	private IAccountDao accountDao;
@@ -28,7 +28,9 @@ public class AccountServiceImpl implements IAccountService {
 	
 	@Override
 	public String addAccount(Customer customer,Address address, Account account) {
-		accountDao.
+		customer.setAddress(address);
+		
+		return accountDao.addAccount(account,customer);
 	}
 
 	@Override
@@ -45,7 +47,7 @@ public class AccountServiceImpl implements IAccountService {
 
 	@Override
 	public Account findAccountById(String accountId) {
-		accountDao.findAccountById(accountId);
+		return accountDao.findAccountById(accountId);
 	}
 
 	
