@@ -25,47 +25,5 @@ public class AccountTest {
 	public void clear() {
 		
 	}
-	
-//    @Test
-//    public void testAdd_1() {
-//	System.out.println("inside testadd_1");
-//	//Calculator c=new Calculator();
-//	int result=c.add(2, 3);
-//	Assertions.assertEquals(5, result);
-//    }
-//	
-//	@Test
-//	@Disabled
-//	public void testAdd_2() {
-//		System.out.println("Inside TestAdd_2");
-//		//Calculator c1=new Calculator();
-//		int result=c.add(-2, -3);
-//		Assertions.assertEquals(-5, result);
-//	}
-//	@Test
-//	public void testIsEven_1() {
-//		System.out.println("Inside IsEven");
-//		boolean result=c.isEven(10);
-//		Assertions.assertTrue(result);
-//	}
-//    
-//    @ParameterizedTest
-//    @ValueSource(ints= {1,2,3,4})
-//    public void testIsEven_2(int num) {
-//    	System.out.println("Inside IsEven_2");
-//    	boolean result=c.isEven(num);
-//    	boolean expected=num%2==0;
-//    	Assertions.assertEquals(expected,result);
-//    }
-//    @Test
-//    public void testmulBy10_1() {
-//    	Multiplier multiplier = Mockito.mock(Multiplier.class);
-//    	Mockito.when(multiplier.mul(4, 10)).thenReturn(40);
-//    	c.setMultiplier(multiplier);
-//    	int result=multiplier.mul(4, 10);
-//    	System.out.println("result="+result);
-//    }
-    
-
     
 }

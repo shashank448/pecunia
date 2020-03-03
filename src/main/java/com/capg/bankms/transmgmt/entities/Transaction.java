@@ -14,7 +14,7 @@ public class Transaction {
 		this.transId = transId;
 	}
 	private String transtype;
-	public static double transAmount;
+	public double transAmount;
 	public Transaction() {
 		super();
 	
@@ -30,6 +30,8 @@ public class Transaction {
 		this.transFrom = transFrom;
 		this.transTo = transTo;
 		this.transClosingBalance = transClosingBalance;
+		
+		
 	}
 	
 	private String option;

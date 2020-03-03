@@ -1,8 +1,8 @@
 package com.capg.bankms.transmgmt.service;
 
 
-
-import com.capg.bankms.accountmgmt.dao.UserMgtStore;
+import java.util.*;
+import com.capg.bankms.accountmgmt.dao.*;
 import com.capg.bankms.accountmgmt.entities.Account;
 
 import com.capg.bankms.transmgmt.dao.TransactionDao;
@@ -16,12 +16,12 @@ public class TransactionServiceImpl implements ITransactionService{
 	
 	private TransactionDao dao;
 	
-	TransactionServiceImpl(TransactionDao dao){
+	public TransactionServiceImpl(TransactionDao dao){
 		this.dao=dao;
 	}
-	public double getBalance(Account a) {
-		
-		
+	
+	@Override
+	public double getBalance(Account a) {		
 		return dao.getBalance(a);
 	
 	}
@@ -30,7 +30,9 @@ public class TransactionServiceImpl implements ITransactionService{
 	public boolean updateBalance(Account a) {
 		return dao.updateBalance(a);
 	}
-
+	public int generateChequeId(Cheque cheque) {
+		return dao.generateChequeId(cheque);
+	}
 	@Override
 	public int creditUsingSlip(Transaction transaction) {
 		ValidateAccount.validateCreditSlip(transaction);
@@ -60,26 +62,37 @@ public class TransactionServiceImpl implements ITransactionService{
 	@Override
 	public int creditUsingCheque(Transaction transaction, Cheque cheque) {
 		ValidateAccount.validateCreditCheque(cheque,transaction);
-		String accountId=transaction.getTransAccountId();
-		double amount=transaction.getTransAmount();
-		Account account=UserMgtStore.accountStore.get(accountId);
-		double balance=account.getAccountBalance();
-		double newBalance=balance+amount;
-		account.setAccountBalance(newBalance);
-		dao.updateBalance(account);	
+			String accountId=transaction.getTransAccountId();
+			double amount=transaction.getTransAmount();
+			
+			
+			
+			Account account=UserMgtStore.accountStore.get(transaction.getTransTo());
+			Account account2=UserMgtStore.accountStore.get(transaction.getTransFrom());
+		
+			account.setAccountBalance(account.getAccountBalance()+amount);
+			account2.setAccountBalance(account2.getAccountBalance()-amount);
+			
+			dao.updateBalance(account);
+			dao.updateBalance(account2);
+			
+		
 		return 0;
 	}
 
 	@Override
 	public int debitUsingCheque(Transaction transaction, Cheque cheque) {
-		ValidateAccount.validateDebitCheque(cheque,transaction);
+		ValidateAccount.validateCreditCheque(cheque,transaction);
 		String accountId=transaction.getTransAccountId();
 		double amount=transaction.getTransAmount();
+		
 		Account account=UserMgtStore.accountStore.get(accountId);
-		double balance=account.getAccountBalance();
-		double newBalance=balance-amount;
-		account.setAccountBalance(newBalance);
+	//	Account account2=UserMgtStore.accountStore.get(transaction.getTransFrom());
+		account.setAccountBalance(account.getAccountBalance()+amount);
+	//	account2.setAccountBalance(account2.getAccountBalance()-amount);
+		
 		dao.updateBalance(account);
+	//	dao.updateBalance(account2);
 		return 0;
 	}	
 }

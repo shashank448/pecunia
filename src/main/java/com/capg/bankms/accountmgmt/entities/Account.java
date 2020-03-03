@@ -8,13 +8,15 @@ public class Account {
 	private String accountBranchId;
 	private String accountType;
 	private String accountStatus;
-	private Double accountBalance;
-	private Double accountInterest;
+	private double accountBalance;
+	private double accountInterest;
 	private Date   lastUpdated;
 	private Customer customer;
 
 	
-
+public Account() {
+	
+}
 
 
 public Customer getCustomer() {
@@ -28,7 +30,7 @@ public Customer getCustomer() {
 
 
 public Account(String accountId, String accountHolderId, String accountBranchId, String accountType,
-			String accountStatus, Double accountBalance, Double accountInterest, Date lastUpdated) {
+			String accountStatus, double accountBalance, double accountInterest, Date lastUpdated) {
 		super();
 		this.accountId = accountId;
 		this.accountHolderId = accountHolderId;
@@ -91,17 +93,17 @@ public void setAccountStatus(String accountStatus) {
 }
 
 
-public Double getAccountBalance() {
+public double getAccountBalance() {
 	return accountBalance;
 }
 
 
-public void setAccountBalance(Double accountBalance) {
+public void setAccountBalance(double accountBalance) {
 	this.accountBalance = accountBalance;
 }
 
 
-public Double getAccountInterest() {
+public double getAccountInterest() {
 	return accountInterest;
 }
 

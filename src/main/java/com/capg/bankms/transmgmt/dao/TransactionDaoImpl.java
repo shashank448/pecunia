@@ -29,10 +29,7 @@ public class TransactionDaoImpl implements TransactionDao{
 
 	@Override
 	public boolean updateBalance(Account account) {
-		Transaction transaction=new Transaction();
-		transaction.setTransAccountId(account.getAccountId());
-		transaction.setTransClosingBalance(account.getAccountBalance());
-	
+		 UserMgtStore.accountStore.put(account.getAccountId(), account);
 		return true;
 	}
 
