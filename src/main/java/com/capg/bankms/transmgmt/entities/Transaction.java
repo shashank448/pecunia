@@ -4,7 +4,6 @@ import java.sql.Date;
 
 public class Transaction {
 	
-	
 	public String transAccountId;
 	private String transId;
 	public String getTransId() {
@@ -14,7 +13,7 @@ public class Transaction {
 		this.transId = transId;
 	}
 	private String transtype;
-	public double transAmount;
+	private double transAmount;
 	public Transaction() {
 		super();
 	

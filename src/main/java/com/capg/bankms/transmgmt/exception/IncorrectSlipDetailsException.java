@@ -1,4 +1,4 @@
-package com.capg.bankms.accountmgmt.exception;
+package com.capg.bankms.transmgmt.exception;
 
 public class IncorrectSlipDetailsException extends RuntimeException {
 	public IncorrectSlipDetailsException (String msg)

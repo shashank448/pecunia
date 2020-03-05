@@ -1,4 +1,4 @@
-package com.capg.bankms.accountmgmt.exception;
+package com.capg.bankms.transmgmt.exception;
 
 public class IncorrectChequeDetailsException extends RuntimeException {
 	public IncorrectChequeDetailsException (String msg)
